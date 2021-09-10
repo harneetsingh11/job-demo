@@ -2,10 +2,20 @@ job("chield_job")
 {
   scm
   {
-        github(ownerAndProject='harneetsingh11/jen-demo',branch='main')
+        github(ownerAndProject='jenkins-docs/simple-java-maven-app',branch='main')
   }
   steps 
   {
         shell('date')
+         maven 
+         {
+            goals('package')
+            mavenInstallation('maven')  
+         }
+  }
+  publishers 
+  {
+        archiveJunit('target/surefire-reports/*.xml')
+        archiveArtifacts('target/*.jar')
   }
 }
