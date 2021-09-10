@@ -6,7 +6,7 @@ job("maven_chield_job")
     }
   scm
   {
-        github(ownerAndProject='jenkins-docs/simple-java-maven-app',branch='main')
+        github(ownerAndProject='jenkins-docs/simple-java-maven-app',branch='master')
   }
   steps 
   {
