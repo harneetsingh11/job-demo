@@ -1,12 +1,15 @@
 job("chield_job")
 {
+  triggers 
+    {
+        upstream(projects='maven-seed-job',threshold='SUCCESS')
+    }
   scm
   {
         github(ownerAndProject='jenkins-docs/simple-java-maven-app',branch='main')
   }
   steps 
   {
-        shell('date')
          maven 
          {
             goals('package')
