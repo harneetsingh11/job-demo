@@ -1,4 +1,4 @@
-job("chield_job")
+job("maven_chield_job")
 {
   triggers 
     {
